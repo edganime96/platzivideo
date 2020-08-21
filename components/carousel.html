@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>carousel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<style>
+    body {
+        margin: 0;
+        background-color: black;
+    }
+    
+    .carousel {
+        width: 100%;
+        overflow: scroll;
+        padding: 30px;
+        position: relative;
+    }
+
+    .carousel__container {
+        white-space: nowrap;
+        margin: 70px 0;
+        padding-bottom: 10px;
+    }
+
+    .carousel-item {
+        background-color: purple;
+        width: 200px;
+        height: 250px;
+        border-radius: 20px;
+        overflow: hidden;
+        margin-right: 10px;
+        display: inline-block;
+        cursor: pointer;
+        transition: 450ms all;
+        transform-origin: center left;
+        position: relative;
+    }
+
+    .carousel-item:hover ~ .carousel-item {
+        transform: translate3d(100px, 0, 0);
+    }
+    
+    .carousel__container:hover .carousel-item {
+        opacity: 0.3;
+    }
+
+    .carousel__container:hover .carousel-item:hover {
+        transform: scale(1.5);
+        opacity: 1;
+    }
+    
+    .carousel-item__img {
+        width: 200px;
+        height: 250px;
+        object-fit: cover;
+    }
+
+    .carousel-item__details {
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+        font-size: 10px;
+        opacity: 0;
+        transition: 450ms opacity;
+        padding: 10px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    .carousel-item__details:hover {
+        opacity: 1;
+    }
+    
+    .carousel-item__details--buttons img{
+        width: 30px;
+        /* opacity: .7; */
+        margin-top: 140px;
+    }
+
+    .carousel-item__details--title, .carousel-item__details--subtitle {
+        color: white;
+        font-family: 'Muli', sans-serif;
+    }
+
+</style>
+<body>
+    <section class="carousel">
+        <div class="carousel__container">
+            <div class="carousel-item">
+                <img class="carousel-item__img" src="https://images.pexels.com/photos/1040161/pexels-photo-1040161.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="hands">
+                <div class="carousel-item__details">
+                    <div class="carousel-item__details--buttons">
+                        <img src="https://img.icons8.com/flat_round/64/000000/play--v1.png"/>
+                        <img src="https://img.icons8.com/flat_round/64/000000/share--v1.png"/>
+                    </div>
+                    <p class="carousel-item__details--title">Cute Gifts</p>
+                    <p class="carousel-item__details--subtitle">2018 16+ 18:59min</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="carousel-item__img" src="https://images.pexels.com/photos/3972037/pexels-photo-3972037.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="easter eggs">
+                <div class="carousel-item__details">
+                    <div class="carousel-item__details--buttons">
+                        <img src="https://img.icons8.com/flat_round/64/000000/play--v1.png"/>
+                        <img src="https://img.icons8.com/flat_round/64/000000/share--v1.png"/>
+                    </div>
+                    <p class="carousel-item__details--title">Easy | Make Easter Eggs</p>
+                    <p class="carousel-item__details--subtitle">2020 12+ 12:53min</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="carousel-item__img" src="https://images.pexels.com/photos/3937174/pexels-photo-3937174.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="desktop setup 2020">
+                <div class="carousel-item__details">
+                    <div class="carousel-item__details--buttons">
+                        <img src="https://img.icons8.com/flat_round/64/000000/play--v1.png"/>
+                        <img src="https://img.icons8.com/flat_round/64/000000/share--v1.png"/>
+                    </div>
+                    <p class="carousel-item__details--title">New Desktop Setup for geeks</p>
+                    <p class="carousel-item__details--subtitle">2019 16+ 6:15min</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="carousel-item__img" src="https://images.pexels.com/photos/838875/pexels-photo-838875.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="makeup trend">
+                <div class="carousel-item__details">
+                    <div class="carousel-item__details--buttons">
+                        <img src="https://img.icons8.com/flat_round/64/000000/play--v1.png"/>
+                        <img src="https://img.icons8.com/flat_round/64/000000/share--v1.png"/>
+                    </div>
+                    <p class="carousel-item__details--title">Makeup Trend</p>
+                    <p class="carousel-item__details--subtitle">2020 12+ 13:04min</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="carousel-item__img" src="https://images.pexels.com/photos/2437299/pexels-photo-2437299.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Italy mountains">
+                <div class="carousel-item__details">
+                    <div class="carousel-item__details--buttons">
+                        <img src="https://img.icons8.com/flat_round/64/000000/play--v1.png"/>
+                        <img src="https://img.icons8.com/flat_round/64/000000/share--v1.png"/>
+                    </div>
+                    <p class="carousel-item__details--title">Views around Italy Mountains</p>
+                    <p class="carousel-item__details--subtitle">2019 16+ 19:05min</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="carousel-item__img" src="https://images.pexels.com/photos/995490/pexels-photo-995490.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Harley Davidson Road">
+                <div class="carousel-item__details">
+                    <div class="carousel-item__details--buttons">
+                        <img src="https://img.icons8.com/flat_round/64/000000/play--v1.png"/>
+                        <img src="https://img.icons8.com/flat_round/64/000000/share--v1.png"/>
+                    </div>
+                    <p class="carousel-item__details--title">My last Trip | Harley Davidson Road...</p>
+                    <p class="carousel-item__details--subtitle">2019 12+ 25:17min</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="carousel-item__img" src="https://images.pexels.com/photos/818654/pexels-photo-818654.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="winter returned to Canada">
+                <div class="carousel-item__details">
+                    <div class="carousel-item__details--buttons">
+                        <img src="https://img.icons8.com/flat_round/64/000000/play--v1.png"/>
+                        <img src="https://img.icons8.com/flat_round/64/000000/share--v1.png"/>
+                    </div>
+                    <p class="carousel-item__details--title">Winter returned to Canada</p>
+                    <p class="carousel-item__details--subtitle">2019 16+ 15:45min</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="carousel-item__img" src="https://images.pexels.com/photos/3972037/pexels-photo-3972037.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="Eggs">
+                <div class="carousel-item__details">
+                    <div class="carousel-item__details--buttons">
+                        <img src="https://img.icons8.com/flat_round/64/000000/play--v1.png"/>
+                        <img src="https://img.icons8.com/flat_round/64/000000/share--v1.png"/>
+                    </div>
+                    <p class="carousel-item__details--title">Titulo descriptivo</p>
+                    <p class="carousel-item__details--subtitle">2020 12+ 12:53min</p>
+                </div>
+            </div>
+        </div><!--carousel__container-->
+    </section>
+</body>
+</html>
